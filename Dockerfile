@@ -10,13 +10,12 @@ COPY ./deploy/ ./
 # Installez les dépendances du serveur Express
 WORKDIR /app/api
 
-RUN ls
 RUN npm install
 
-RUN ls node_modules
+WORKDIR /app
 
 # Exposez le port sur lequel le serveur Express fonctionne (ajustez si nécessaire)
 EXPOSE 9999
 
 # Commande pour démarrer le serveur Express
-CMD [ "node", "index.js" ]
+CMD [ "node", "api/index.js" ]

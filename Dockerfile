@@ -13,6 +13,8 @@ WORKDIR /app/api
 RUN ls
 RUN npm install
 
+RUN ls node_modules
+
 # Exposez le port sur lequel le serveur Express fonctionne (ajustez si nécessaire)
 EXPOSE 9999
 

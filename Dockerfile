@@ -9,6 +9,8 @@ COPY ./deploy/ ./
 
 # Installez les dépendances du serveur Express
 WORKDIR /app/api
+
+RUN ls
 RUN npm install
 
 # Exposez le port sur lequel le serveur Express fonctionne (ajustez si nécessaire)

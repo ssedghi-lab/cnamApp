@@ -12,9 +12,10 @@ WORKDIR /app/api
 
 RUN npm install
 
+WORKDIR /app
 
 # Exposez le port sur lequel le serveur Express fonctionne (ajustez si nécessaire)
-EXPOSE 9999
+EXPOSE 80
 
 # Commande pour démarrer le serveur Express
-CMD [ "node", "index.js" ]
+CMD [ "node", "api/index.js" ]

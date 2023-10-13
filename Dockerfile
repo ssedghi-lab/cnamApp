@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     zip \
  && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod rewrite  
+
 RUN a2enmod proxypass
 RUN a2enmod proxypass-reverse
 COPY ./deploy/my-proxy.conf /usr/local/apache2/conf/my-proxy.conf

@@ -1,21 +1,25 @@
-# Utilisez une image Node.js pour construire l'application
-FROM node:14 
+FROM httpd:2.4
 
-# Définissez le répertoire de travail
-WORKDIR /app
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    proxy_html \
+    unzip \
+    zip 
+  
+RUN a2enmod proxypass
+RUN a2enmod proxypass-reverse
+COPY ./deploy/my-proxy.conf /usr/local/apache2/conf/my-proxy.conf
 
-# Copiez le fichier package.json et le fichier package-lock.json
-COPY ./deploy/ ./
+COPY ./deploy/ /var/www/html
 
-# Installez les dépendances du serveur Express
-WORKDIR /app/api
+WORKDIR /var/www/html/api
 
-RUN npm install
+RUN npm install && npm build
 
-WORKDIR /app
-
-# Exposez le port sur lequel le serveur Express fonctionne (ajustez si nécessaire)
+# Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80
 
-# Commande pour démarrer le serveur Express
-CMD [ "node", "api/index.js" ]
+# Définir l'entrée de l'application
+CMD ["apache2-foreground"]
+ENTRYPOINT ["npm","start"]

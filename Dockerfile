@@ -19,7 +19,7 @@ RUN npm install
 
 #RUN npm install pm2 -g
 
-RUN export PATH=$PATH:/usr/local/lib/node_modules/pm2/bin/
+RUN ls /usr/local/lib/node_modules/pm2/bin/
 
 
 # Exposer le port 80 pour permettre les connexions entrantes

@@ -19,12 +19,19 @@ RUN npm install
 
 RUN npm install pm2 -g
 
-RUN export PATH=$PATH:/usr/local/lib/node_modules/pm2/bin/
+RUN env PATH=$PATH:/usr/local/lib/node_modules/pm2/bin/pm2
 
+RUN pm2 start ./index.js
+
+RUN pm2 save
+
+RUN pm2 startup
+
+RUN startup systemd
 
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80
 
 # Définir l'entrée de l'application
-ENTRYPOINT ["pm2", "start", "./index.js"]
+CMD ["apache2-foreground"]
 

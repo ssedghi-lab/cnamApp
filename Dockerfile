@@ -31,4 +31,4 @@ RUN pm2 save
 EXPOSE 80
 
 # Définir l'entrée de l'application
-CMD pm2 startup && apache2-foreground
+CMD pm2 resurrect && apache2-foreground

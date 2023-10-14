@@ -26,5 +26,5 @@ RUN export PATH=$PATH:/usr/local/lib/node_modules/pm2/bin/
 EXPOSE 80
 
 # Définir l'entrée de l'application
-CMD ["pm2", "start", "./index.js"]
+ENTRYPOINT ["pm2", "start", "./index.js"]
 

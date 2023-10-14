@@ -19,7 +19,7 @@ RUN npm install
 
 RUN npm install pm2 -g
 
-RUN start ./index.js 
+RUN pm2 start ./index.js 
 
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80

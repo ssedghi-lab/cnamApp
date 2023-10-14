@@ -1,14 +1,11 @@
-#FROM php:7.4-apache
-FROM httpd:2.4
+FROM php:7.4-apache
 
 RUN apt-get update && apt-get install -y \
     nodejs \
     npm \
     unzip \
     zip \
-    a2enmod \ 
  && rm -rf /var/lib/apt/lists/*
-
 
 RUN a2enmod proxypass
 RUN a2enmod proxypass-reverse

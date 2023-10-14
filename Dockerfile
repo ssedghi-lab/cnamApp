@@ -17,6 +17,10 @@ WORKDIR /var/www/html/api
 
 RUN npm install 
 
+RUN npm install pm2 -g
+
+RUN start ./index.js 
+
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80
 

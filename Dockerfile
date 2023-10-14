@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     npm \
     unzip \
     zip \
+    a2enmod \ 
  && rm -rf /var/lib/apt/lists/*
 
 

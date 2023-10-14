@@ -21,5 +21,5 @@ RUN npm install
 EXPOSE 80
 
 # Définir l'entrée de l'application
-RUN apache2-foreground
-CMD ["npm","start"]
+CMD ["apache2-foreground"]
+

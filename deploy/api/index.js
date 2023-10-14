@@ -33,7 +33,7 @@ db.sequelize.sync()
 require("./routes/utilisateur.routes")(app);
 
 // set port, listen for requests
-const PORT =  80;
+const PORT =  3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

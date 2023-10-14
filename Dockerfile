@@ -27,8 +27,6 @@ RUN pm2 save
 
 RUN pm2 startup
 
-RUN startup systemd
-
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80
 

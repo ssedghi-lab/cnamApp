@@ -35,7 +35,7 @@
 	    $response->getBody()->write(json_encode($data));
 	    
 	    return $response;
-	);
+	}
 
 	function optionsUtilisateur (Request $request, Response $response, $args) {
 	    

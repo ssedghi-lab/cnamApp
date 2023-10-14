@@ -72,7 +72,7 @@
 	    $err=false;
 	    $body = $request->getParsedBody();
 	    $login = $body ['login'] ?? "";
-	    $pass = $body ['pass'] ?? "";
+	    $pass = $body ['password'] ?? "";
 
 	    if (!preg_match("/[a-zA-Z0-9]{1,20}/",$login))   {
 		$err = true;

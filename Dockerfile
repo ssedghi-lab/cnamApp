@@ -15,7 +15,7 @@ COPY ./deploy/ /var/www/html
 
 WORKDIR /var/www/html/api
 
-RUN npm install && npm build
+RUN npm install 
 
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80

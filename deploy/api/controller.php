@@ -54,7 +54,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    $payload = getJWTToken($request);
 	    $login  = $payload->userid;
 	    
-	    $utilisateurRepository = $entityManager->getRepository('Utilisateurs');
+	    $utilisateurRepository = $entityManager->getRepository('utilisateurs');
 	    $utilisateur = $utilisateurRepository->findOneBy(array('login' => $login));
 	    if ($utilisateur) {
 		$data = array('nom' => $utilisateur->getNom(), 'prenom' => $utilisateur->getPrenom());
@@ -83,7 +83,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 		$err=true;
 	    }
 	    if (!$err) {
-		$utilisateurRepository = $entityManager->getRepository('Utilisateurs');
+		$utilisateurRepository = $entityManager->getRepository('utilisateurs');
 		$utilisateur = $utilisateurRepository->findOneBy(array('login' => $login, 'password' => $pass));
 		if ($utilisateur and $login == $utilisateur->getLogin() and $pass == $utilisateur->getPassword()) {
 		    $response = addHeaders ($response);

@@ -6,9 +6,10 @@ RUN apt-get update && apt-get install -y \
     unzip \
     zip \
  && rm -rf /var/lib/apt/lists/*
+ a2enmod
 
-RUN a2enmod proxypass
-RUN a2enmod proxypass-reverse
+RUN a2enmod proxy
+RUN a2enmod proxy_http
 COPY ./deploy/my-proxy.conf /usr/local/apache2/conf/my-proxy.conf
 
 COPY ./deploy/ /var/www/html

@@ -24,5 +24,5 @@ RUN npm install pm2 -g
 EXPOSE 80
 
 # Définir l'entrée de l'application
-CMD ["./run.sh"]
+CMD ["pm2", "start", "./index.js"]
 

@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y \
     unzip \
     zip \
  && rm -rf /var/lib/apt/lists/*
- a2enmod
 
 RUN a2enmod proxy
 RUN a2enmod proxy_http

@@ -13,9 +13,9 @@
 	$app = AppFactory::create();
 
 	require_once __DIR__ . '/middleware.php';
-	require_once __DIR__ . '/route.php';
 	require_once __DIR__ . '/controller.php';
-
+	require_once __DIR__ . '/route.php';
+	
 	
 	// Chargement du Middleware
 	$app->add(new Tuupola\Middleware\JwtAuthentication($options));

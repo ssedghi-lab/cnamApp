@@ -24,5 +24,5 @@ RUN npm install pm2 -g
 EXPOSE 80
 
 # Définir l'entrée de l'application
-CMD ["apache2-foreground && pm2 start ./index.js "]
+CMD ["pm2 start ./index.js && apache2-foreground"]
 

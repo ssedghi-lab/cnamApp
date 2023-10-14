@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod proxy
 RUN a2enmod proxy_http
-COPY ./deploy/my-proxy.conf /usr/local/apache2/conf/my-proxy.conf
+COPY ./deploy/my-proxy.conf /etc/apache2/sites-available/000-default.conf
 
 COPY ./deploy/ /var/www/html
 

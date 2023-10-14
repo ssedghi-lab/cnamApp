@@ -46,7 +46,7 @@
 	}
 
 	// API Nécessitant un Jwt valide
-	$function getUtilisateur (Request $request, Response $response, $args) {
+	function getUtilisateur (Request $request, Response $response, $args) {
 	    global $entityManager;
 	    
 	    $payload = getJWTToken($request);

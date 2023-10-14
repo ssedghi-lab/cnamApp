@@ -52,7 +52,7 @@
 	    $payload = getJWTToken($request);
 	    $login  = $payload->userid;
 	    
-	    $utilisateurRepository = $entityManager->getRepository('Utilisateur');
+	    $utilisateurRepository = $entityManager->getRepository('Utilisateurs');
 	    $utilisateur = $utilisateurRepository->findOneBy(array('login' => $login));
 	    if ($utilisateur) {
 		$data = array('nom' => $utilisateur->getNom(), 'prenom' => $utilisateur->getPrenom());
@@ -81,7 +81,7 @@
 		$err=true;
 	    }
 	    if (!$err) {
-		$utilisateurRepository = $entityManager->getRepository('Utilisateur');
+		$utilisateurRepository = $entityManager->getRepository('Utilisateurs');
 		$utilisateur = $utilisateurRepository->findOneBy(array('login' => $login, 'password' => $pass));
 		if ($utilisateur and $login == $utilisateur->getLogin() and $pass == $utilisateur->getPassword()) {
 		    $response = addHeaders ($response);

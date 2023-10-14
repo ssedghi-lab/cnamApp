@@ -19,11 +19,10 @@ RUN npm install
 
 RUN npm install pm2 -g
 
-RUN pm2 start ./index.js 
 
 # Exposer le port 80 pour permettre les connexions entrantes
 EXPOSE 80
 
 # Définir l'entrée de l'application
-CMD ["apache2-foreground"]
+CMD ["apache2-foreground && pm2 start ./index.js "]
 

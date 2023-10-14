@@ -60,7 +60,7 @@
 		$response = createJwT ($response);
 		$response->getBody()->write(json_encode($data));
 	    } else {
-		$response = $response->withStatus(401);
+		$response = $response->withStatus(404);
 	    }
 
 	    return $response;
@@ -89,10 +89,10 @@
 		    $data = array('nom' => $utilisateur->getNom(), 'prenom' => $utilisateur->getPrenom());
 		    $response->getBody()->write(json_encode($data));
 		} else {          
-		    $response = $response->withStatus(401);
+		    $response = $response->withStatus(403);
 		}
 	    } else {
-		$response = $response->withStatus(401);
+		$response = $response->withStatus(500);
 	    }
 
 	    return $response;

@@ -22,4 +22,4 @@ EXPOSE 80
 
 # Définir l'entrée de l'application
 CMD ["apache2-foreground"]
-ENTRYPOINT ["npm","start"]
+CMD ["npm","start"]

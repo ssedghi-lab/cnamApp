@@ -1,4 +1,7 @@
 <?php
+	use Tuupola\Middleware\HttpBasicAuthentication;
+	use \Firebase\JWT\JWT;
+	
 	const JWT_SECRET = "TP-CNAM";
 
 	function getJWTToken($request)

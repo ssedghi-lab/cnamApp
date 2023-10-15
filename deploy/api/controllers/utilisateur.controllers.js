@@ -18,18 +18,21 @@ exports.login = (req, res) => {
     password: req.body.password
   };
 
-  Utilisateur.findOne({ where: { login: utilisateur.login } })
+  // Test
+  let pattern = /[A-Za-z0-9]{1,20}/g;
+  if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
+     Utilisateur.findOne({ where: { login: utilisateur.login } })
     .then(data => {
       if (data) {
         const user = {
           id: data.id,
           name: data.nom,
           email: data.email
-      };
+        };
       
-      let accessToken = generateAccessToken(user);
-      res.setHeader('Authorization', `Bearer ${accessToken}`);
-      res.send(data);
+        let accessToken = generateAccessToken(user);
+        res.setHeader('Authorization', `Bearer ${accessToken}`);
+        res.send(data);
       } else {
         res.status(404).send({
           message: `Cannot find Utilisateur with login=${utilisateur.login}.`
@@ -37,10 +40,15 @@ exports.login = (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(400).send({
         message: "Error retrieving Utilisateur with login=" + utilisateur.login
       });
     });
+  } else {
+    res.status(400).send({
+      message: "Login ou password incorrect" 
+    });
+  }
 };
 
 exports.create = (req, res) => {

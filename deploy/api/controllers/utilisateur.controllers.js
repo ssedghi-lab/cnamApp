@@ -59,6 +59,7 @@ exports.create = (req, res) => {
       prenom: req.body.prenom,
       login: req.body.login,
       email : req.body.email,
+      password : req.body.password,
       id : uuid
     };
   

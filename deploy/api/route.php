@@ -21,5 +21,5 @@
 	$app->get('/api/utilisateur', 'getUtilisateur');
 
 	// APi d'authentification générant un JWT
-	$app->post('/api/login', 'postLogin');
+	$app->post('/api/utilisateur/login', 'postLogin');
 

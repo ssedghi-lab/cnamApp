@@ -2,6 +2,7 @@
 	use Psr\Http\Message\ResponseInterface as Response;
 	use Psr\Http\Message\ServerRequestInterface as Request;
 	use Tuupola\Middleware\HttpBasicAuthentication;
+	use Tuupola\Middleware\HttpBasicAuthentication;
 	use \Firebase\JWT\JWT;
 	
 	const JWT_SECRET = "TP-CNAM";
@@ -56,5 +57,7 @@
 	    return $response;
 	}
 
-
+	// Chargement du Middleware
+	$app->add(new Tuupola\Middleware\JwtAuthentication($options));
+	
 

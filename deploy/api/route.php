@@ -1,11 +1,6 @@
 <?php
 
-	$app->get('/api/hello/{name}', function (Request $request, Response $response, $args) {
-	    $array = [];
-	    $array ["nom"] = $args ['name'];
-	    $response->getBody()->write(json_encode ($array));
-	    return $response;
-	});
+	$app->get('/api/hello/{name}', 'hello');
 
 	$app->options('/api/catalogue', 'optionsCatalogue' );
 
@@ -22,4 +17,6 @@
 
 	// APi d'authentification générant un JWT
 	$app->post('/api/utilisateur/login', 'postLogin');
+	
+	
 

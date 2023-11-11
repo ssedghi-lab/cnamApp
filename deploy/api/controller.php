@@ -11,7 +11,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	}
 
 	function hello(Request $request, Response $response, $args) {{
-		function (Request $request, Response $response, $args) {
 	    $array = [];
 	    $array ["nom"] = $args ['name'];
 	    $response->getBody()->write(json_encode ($array));

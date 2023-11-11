@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    return addHeaders ($response);
 	}
 
-	function hello(Request $request, Response $response, $args) {{
+	function hello(Request $request, Response $response, $args) {
 	    $array = [];
 	    $array ["nom"] = $args ['name'];
 	    $response->getBody()->write(json_encode ($array));

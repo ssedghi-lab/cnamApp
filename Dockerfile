@@ -23,8 +23,8 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     libpq-dev \
     unzip \
     zip \
-&& rm -rf /var/lib/apt/lists/* \
-&& a2enmod rewrite headers \
+&& rm -rf /var/lib/apt/lists/* 
+RUN a2enmod rewrite headers \
 && composer install --prefer-dist \
 && composer dump-autoload --optimize \
 && composer update

@@ -60,6 +60,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    
 		$flux = '{"nom":"martin","prenom":"jean"}';
 	    
+	    $response = createJwT ($response);
 	    $response->getBody()->write($flux );
 	    
 	    return addHeaders ($response);

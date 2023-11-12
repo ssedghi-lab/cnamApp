@@ -18,11 +18,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	}
 	
 	function  getSearchCalatogue (Request $request, Response $response, $args) {
-	    $filtre = $args['filtre'];
 	    $flux = '[{"titre":"linux","ref":"001","prix":"20"},{"titre":"java","ref":"002","prix":"21"},{"titre":"windows","ref":"003","prix":"22"},{"titre":"angular","ref":"004","prix":"23"},{"titre":"unix","ref":"005","prix":"25"},{"titre":"javascript","ref":"006","prix":"19"},{"titre":"html","ref":"007","prix":"15"},{"titre":"css","ref":"008","prix":"10"}]';
-		$data = json_decode($flux, true); 
-	    
-	   $response->getBody()->write(json_encode($data));
+		
+	   $response->getBody()->write($flux);
 	   
 	    return addHeaders ($response);
 	}
@@ -30,9 +28,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	// API Nécessitant un Jwt valide
 	function getCatalogue (Request $request, Response $response, $args) {
 	    $flux = '[{"titre":"linux","ref":"001","prix":"20"},{"titre":"java","ref":"002","prix":"21"},{"titre":"windows","ref":"003","prix":"22"},{"titre":"angular","ref":"004","prix":"23"},{"titre":"unix","ref":"005","prix":"25"},{"titre":"javascript","ref":"006","prix":"19"},{"titre":"html","ref":"007","prix":"15"},{"titre":"css","ref":"008","prix":"10"}]';
-	    $data = json_decode($flux, true); 
 	    
-	    $response->getBody()->write(json_encode($data));
+	    $response->getBody()->write($flux);
 	    
 	    return addHeaders ($response);
 	}
@@ -62,9 +59,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	function postLogin (Request $request, Response $response, $args) {   
 	    
 		$flux = '{"nom":"martin","prenom":"jean"}';
-	    $data = json_decode($flux, true); 
 	    
-	    response->getBody()->write(json_encode($data));
+	    $response->getBody()->write($flux );
 	    
 	    return addHeaders ($response);
 	}

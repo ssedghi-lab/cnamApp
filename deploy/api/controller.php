@@ -53,7 +53,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    
 		$flux = '{"nom":"martin","prenom":"jean"}';
 	    
-	    response->getBody()->write($flux);
+	    $response->getBody()->write($flux);
 	    
 	    return addHeaders ($response);
 	}

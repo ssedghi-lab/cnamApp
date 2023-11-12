@@ -52,9 +52,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    $login  = $payload->userid;
 	    
 		$flux = '{"nom":"martin","prenom":"jean"}';
-	    $data = json_decode($flux, true); 
 	    
-	    response->getBody()->write(json_encode($data));
+	    response->getBody()->write($flux);
 	    
 	    return addHeaders ($response);
 	}

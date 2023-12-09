@@ -33,7 +33,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-require("./routes/utilisateur.routes")(app);
+require("./routes")(app);
 
 // set port, listen for requests
 const PORT =  443;

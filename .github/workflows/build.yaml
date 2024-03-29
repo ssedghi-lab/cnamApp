@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: emmamau/cnamapp
+  IMAGE_NAME: emmamau/cnamApp
 
 jobs:
   build-and-publish:

@@ -48,7 +48,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 	    $payload = getJWTToken($request);
 	    $login  = $payload->userid;
 	    
-		$flux = '{"nom":"martin","prenom":"jean"}';
+		$flux = '{"nom":"martin","prenom":"louis"}';
 	    
 	    $response->getBody()->write($flux);
 	    

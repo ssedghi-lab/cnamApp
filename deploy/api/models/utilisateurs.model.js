@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Utilisateurs = sequelize.define("Utilisateurs", {
+  const Utilisateurs = sequelize.define("utilisateurs", {
 
    id: {
         type: Sequelize.STRING,
@@ -14,31 +14,13 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
       // allowNull defaults to true
     },    
-    adresse: {
-        type: Sequelize.STRING,
-    },
-    codepostal: {
-        type: Sequelize.STRING,
-    },
-    ville: {
-        type: Sequelize.STRING,
-    },
-    email: {
-        type: Sequelize.STRING,
-    },
-    sexe: {
-        type: Sequelize.STRING,
-    },
     login: {
         type: Sequelize.STRING,
         allowNull: false
     },
     pass: {
         type: Sequelize.STRING,
-    },
-    telephone: {
-        type: Sequelize.STRING,
-    },
+    }
  });
 return Utilisateurs;
 };

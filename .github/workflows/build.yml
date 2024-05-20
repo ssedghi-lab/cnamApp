@@ -7,7 +7,7 @@ on:
       - nodejsAvecBDD
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: emmamau/nodejs
+  IMAGE_NAME: emmamau/nodejsAvecBDD
 
 jobs:
   build-and-publish:

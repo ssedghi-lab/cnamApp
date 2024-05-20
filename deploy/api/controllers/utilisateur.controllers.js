@@ -8,7 +8,7 @@ function generateAccessToken(user) {
   }
 
 const db = require("../models");
-const Utilisateur = db.utilisateur;
+const Utilisateurs = db.utilisateurs;
 const Op = db.Sequelize.Op;
 
 // Find a single Utilisateur with an login
@@ -21,7 +21,7 @@ exports.login = (req, res) => {
   // Test
   let pattern = /^[A-Za-z0-9]{1,20}$/;
   if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
-     Utilisateur.findOne({ where: { login: utilisateur.login } })
+     Utilisateurs.findOne({ where: { login: utilisateur.login } })
     .then(data => {
       if (data) {
         const user = {

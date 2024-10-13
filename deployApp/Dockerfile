@@ -2,11 +2,11 @@ FROM php:7.4-apache
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-COPY ./BACKEND/ /var/www/html
+COPY ./deployApi/api/ /var/www/html
 
 COPY ./FRONTEND/ /var/www/html
 
-COPY ./BACKEND/composer.json /var/www/html/composer.json
+COPY ./deployApi/composer.json /var/www/html/composer.json
 
 WORKDIR /var/www/html
 

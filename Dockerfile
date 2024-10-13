@@ -4,7 +4,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 
 COPY ./deployApi/ /var/www/html
 
-COPY ./deployApp/FRONTEND/ /var/www/html
+COPY ./deployApp/ /var/www/html
 
 WORKDIR /var/www/html
 

@@ -46,7 +46,7 @@ app.get('*', (req, res) => {
 
 db.sequelize.sync({ force: false }) // Mettre `force: true` pour recréer les tables à chaque démarrage
     .then(() => {
-        const port = process.env.SERVER_PORT || 3000;
+        const port = process.env.SERVER_PORT || 443;
         app.listen(port, () => {
             console.log(`Serveur démarré sur http://localhost:${port}`);
         });
